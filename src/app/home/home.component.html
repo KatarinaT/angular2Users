@@ -1,3 +1,25 @@
-<p>
-  home works!
-</p>
+<div class="container">
+  <div class="col-md-8" *ngIf="users.length">
+    <div class="row list-group-item active">
+      <div class="col-md-4">ФИО</div>
+
+      <div class="col-md-4">Дата добавления</div>
+
+      <div class="col-md-3">Телефон</div>
+    </div>
+
+    <div *ngFor="let user of users" class="row list-group-item">
+      <div class="col-md-4">
+        {{ user.name }}
+      </div>
+
+      <div class="col-md-4">
+        {{ user.createdDate.format('YYYY-MM-DD H:mm:ss') }}
+      </div>
+
+      <div class="col-md-3">
+        {{ user.phone }}
+      </div>
+    </div>
+  </div>
+</div>
