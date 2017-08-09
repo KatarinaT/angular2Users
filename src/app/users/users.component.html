@@ -1,3 +1,34 @@
-<p>
-  users works!
-</p>
+<div class="container">
+  <p>
+    <button type="button" class="btn btn-success">Добавить пользователя</button>
+  </p>
+
+
+  <div class="col-md-8" *ngIf="users.length">
+    <div class="row list-group-item active">
+      <div class="col-md-4">ФИО</div>
+
+      <div class="col-md-4">Дата добавления</div>
+
+      <div class="col-md-3">Телефон</div>
+    </div>
+
+    <div *ngFor="let user of users" class="row list-group-item">
+      <button type="button" class="btn btn-default btn-xs">
+        <span class="glyphicon glyphicon-pencil" aria-hidden="true"> Edit</span>
+      </button>
+
+      <div class="col-md-4">
+        {{ user.name }}
+      </div>
+
+      <div class="col-md-4">
+        {{ user.createdDate.format('YYYY-MM-DD H:mm:ss') }}
+      </div>
+
+      <div class="col-md-3">
+        {{ user.phone }}
+      </div>
+    </div>
+  </div>
+</div>
