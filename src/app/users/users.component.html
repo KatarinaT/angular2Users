@@ -6,7 +6,7 @@
 
   <div class="col-md-8" *ngIf="users.length">
     <div class="row list-group-item active">
-      <div class="col-md-4">ФИО</div>
+      <div class="col-md-3">ФИО</div>
 
       <div class="col-md-4">Дата добавления</div>
 
@@ -15,10 +15,9 @@
 
     <div *ngFor="let user of users" class="row list-group-item">
       <button type="button" class="btn btn-default btn-xs" (click)="goToEditUser(user)">
-        <span class="glyphicon glyphicon-pencil" aria-hidden="true"> Edit</span>
+        <span class="glyphicon glyphicon-pencil" aria-hidden="true"> изменить</span>
       </button>
-
-      <div class="col-md-4">
+      <div class="col-md-3">
         {{ user.name }}
       </div>
 
