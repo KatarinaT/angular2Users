@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     this._userService.getAllUsers()
       .then(users => {
         users.sort(function (left, right) {
-          return moment.utc(left.createdDate).diff(moment.utc(right.createdDate))
+          return moment.utc(right.createdDate).diff(moment.utc(left.createdDate))
         });
         this.users = users.slice(0, 5)
       })

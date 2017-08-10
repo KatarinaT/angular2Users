@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { User } from '../user';
 import { UserService } from '../user.service';
@@ -12,7 +13,7 @@ import { UserService } from '../user.service';
 export class UsersComponent implements OnInit {
   users: User[] = [];
 
-  constructor(private _userSevice: UserService) { }
+  constructor(private _userSevice: UserService, private router: Router) { }
 
   getUsers(): void {
     this._userSevice.getAllUsers()
@@ -21,6 +22,15 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUsers();
+  }
+
+  addUser(): void {
+    this.router.navigateByUrl('users/form');
+  }
+
+  goToEditUser(user: User):void {
+    let link = 'users/form/' + user.id;
+    this.router.navigateByUrl(link);
   }
 
 }
