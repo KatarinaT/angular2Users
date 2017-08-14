@@ -25,7 +25,7 @@ export class UserFormComponent implements OnInit {
     this.activeRoute.paramMap
       .switchMap((params: ParamMap) => this._userService.getUser(+params.get('id')))
       .subscribe(user => {
-        if (user instanceof Object) {
+        if (user) {
           this.user = user;
           this.title = 'Редактирование';
         } else {
