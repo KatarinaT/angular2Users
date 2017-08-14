@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { User } from '../user';
-import { UserService } from '../user.service';
+import { User } from '../modules/users/user';
+import { UserService } from '../modules/users/user.service';
 import * as moment from 'moment';
 
 @Component({
